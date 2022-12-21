@@ -1,16 +1,17 @@
-# wretched-room-300
-This application is created by the java language. You can perform operation like adding employee removing employee deleting employee and all other operation related to the HR department. Human Resourse  Management
-
-
-# HR Management System
+# HR Management System 
+### [ Project Code - wretched-room-300 ]
 <br>
 
 ## About
-### A Java and myaql based application for Globsyn to control and manage the records of the Employees and Departments for Human Resource Management.
+This application is created by the java language. You can perform operation like adding employee removing employee deleting employee and all other operation related to the HR department. Human Resourse  Management
 <br>
 
-## Built with
-### java, mysql
+## Tech Stack 
+- Java
+- MySql
+- Hibernate
+- JDBC
+
 <br>
 
 ## Getting Started
