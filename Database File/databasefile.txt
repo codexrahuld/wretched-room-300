@@ -1,0 +1,161 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> CREATE DATABASE sb101project;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE SB101PROJECT ;
+Database changed
+mysql> CREATE TABLE department (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> Name VARCHAR(50) UNIQUE NOT NULL
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into department (name) values ('it');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from department;
++----+------+
+| id | Name |
++----+------+
+|  1 | it   |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE employee (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> firstName VARCHAR(25) NOT NULL,
+    -> lastName VARCHAR(25) NOT NULL,
+    -> mobile VARCHAR(10) UNIQUE NOT NULL,
+    -> email VARCHAR(100) UNIQUE NOT NULL,
+    -> password VARCHAR(100) NOT NULL,
+    -> dateOfBirth DATE NOT NULL,
+    -> address VARCHAR(255) NOT NULL,
+    -> salary INT NOT NULL,
+    -> hireDate DATE NOT NULL,
+    -> departmentID INT NOT NULL,
+    -> FOREIGN KEY (departmentID) REFERENCES department (id)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into employee(firstName,lastName,mobile,email,password,dateOfBirth,address,salary,hireDate,departmentID) values('a','a','111111','a@a','pass','2001-01-01','add',5000,'2022-01-01',1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from employe;
+ERROR 1146 (42S02): Table 'sb101project.employe' doesn't exist
+mysql> select * from employee;
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+| id | firstName | lastName | mobile | email | password | dateOfBirth | address | salary | hireDate   | departmentID |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+|  1 | a         | a        | 111111 | a@a   | pass     | 2001-01-01  | add     |   5000 | 2022-01-01 |            1 |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE leaves (
+    -> empID INT NOT NULL,
+    -> leavefrom DATE NOT NULL,
+    -> leavetill DATE NOT NULL,
+    -> status VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    -> FOREIGN key (empID) REFERENCES employee (id)
+    -> );
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> insert into leaves(empID,leavefrom,leavetill) values(6,'2022-02-02','2020-03-03');
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`sb101project`.`leaves`, CONSTRAINT `leaves_ibfk_1` FOREIGN KEY (`empID`) REFERENCES `employee` (`id`))
+mysql> CREATE TABLE eavesl (
+    -> empID INT NOT NULL,
+    -> leavefrom DATE NOT NULL,
+    -> leavetill DATE NOT NULL,
+    -> status VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    -> FOREIGN key (empID) REFERENCES employee (id)
+    -> );
+Query OK, 0 rows affected (0.56 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_sb101project |
++------------------------+
+| department             |
+| eavesl                 |
+| employee               |
+| leaves                 |
++------------------------+
+4 rows in set (0.37 sec)
+
+mysql> select * from eavesl;
+Empty set (2.29 sec)
+
+mysql> select * from department;
++----+------+
+| id | Name |
++----+------+
+|  1 | it   |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee;
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+| id | firstName | lastName | mobile | email | password | dateOfBirth | address | salary | hireDate   | departmentID |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+|  1 | a         | a        | 111111 | a@a   | pass     | 2001-01-01  | add     |   5000 | 2022-01-01 |            1 |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_sb101project |
++------------------------+
+| department             |
+| eavesl                 |
+| employee               |
+| leaves                 |
++------------------------+
+4 rows in set (0.00 sec)
+
+mysql> show tables
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show tables' at line 2
+mysql> select * from employee;
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+| id | firstName | lastName | mobile | email | password | dateOfBirth | address | salary | hireDate   | departmentID |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+|  1 | a         | a        | 111111 | a@a   | pass     | 2001-01-01  | add     |   5000 | 2022-01-01 |            2 |
++----+-----------+----------+--------+-------+----------+-------------+---------+--------+------------+--------------+
+1 row in set (0.12 sec)
+
+mysql> insert into employee(firstName,lastName,mobile,email,password,dateOfBirth,address,salary,hireDate,departmentID) values('R','R','7709296064','R@R','pass','2001-01-01','add',5000,'2022-01-01',1);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select * from employee;
++----+-----------+----------+------------+-------+----------+-------------+---------+--------+------------+--------------+
+| id | firstName | lastName | mobile     | email | password | dateOfBirth | address | salary | hireDate   | departmentID |
++----+-----------+----------+------------+-------+----------+-------------+---------+--------+------------+--------------+
+|  1 | a         | a        | 111111     | a@a   | pass     | 2001-01-01  | add     |   5000 | 2022-01-01 |            2 |
+|  3 | R         | R        | 7709296064 | R@R   | pass     | 2001-01-01  | add     |   5000 | 2022-01-01 |            1 |
++----+-----------+----------+------------+-------+----------+-------------+---------+--------+------------+--------------+
+2 rows in set (0.08 sec)
