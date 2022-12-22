@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 import com.project.main.employee.EmployeeUseCases;
 import com.project.model.Employee;
+import com.project.usecases.EmployeeByDepartment;
+import com.project.usecases.GetAllDepartment;
+import com.project.usecases.RegisterDepartment;
+import com.project.usecases.RegisterEmployee;
+import com.project.usecases.UpdateDepartment;
 import com.project.usecases.UpdateEmployee;
+import com.project.usecases.ViewAllEmployee;
+import com.project.usecases.ViewEmployeeDetail;
+import com.project.usecases.transferEmployee;
 
 
 
@@ -48,9 +56,51 @@ public class Options {
 			System.out.println("----------------------------------------------");
 			} catch (InterruptedException e) {}
 			
-			int opt = sc.nextInt();
+			int ch = sc.nextInt();
 			
 	
+
+			switch(ch) {
+			case 1:
+				RegisterDepartment.main(null);
+				break;
+			case 2:
+				GetAllDepartment.main(null);
+				break;
+			case 3:
+				UpdateDepartment.main(null);
+				break;
+			case 4:
+				RegisterEmployee.main(null);
+				break;
+			case 5:
+				ViewAllEmployee.main(null);
+				break;
+			case 6:
+//				pendingLeave.main(null);
+				break;
+			case 7:
+				System.out.println("Enter ID of Employee");
+				int id=sc.nextInt();
+				ViewEmployeeDetail.main(id);
+				break;
+			case 8:
+				System.out.println("Enter ID of Employee");
+				int id1=sc.nextInt();
+				UpdateEmployee.main(id1);
+				break;
+			case 9:
+				transferEmployee.main(null);
+				break;
+			case 10:
+				EmployeeByDepartment.main(null);
+				break;
+			case 11:
+				extraFeature.thank();
+				return;
+				default:
+					System.out.println("Wrong Input");
+			}
 
 		}
 		
@@ -84,6 +134,7 @@ public static void employeePanel(Employee employee) {
 			Thread.sleep(50);
 			System.out.println("----------------------------------------------");
 			} catch (InterruptedException e) {}
+			
 			int ch=sc.nextInt();
 			
 			switch(ch) {
@@ -93,10 +144,15 @@ public static void employeePanel(Employee employee) {
 			case 2:
 				UpdateEmployee.main(employee.getId());
 				break;
-			
-			case 3:
-				extraFeature.thank();
-				return;
+//			case 3:
+//				changeEmpPass.main(employee.getId());
+//				break;
+//			case 4:
+//				applyLeave.main(employee.getId());
+//				break;
+//			case 5:
+//				CoolThings.thank();
+//				return;
 				default:
 					System.out.println("Wrong Input");
 			}
