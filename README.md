@@ -30,7 +30,6 @@ before that create mysql database according to db.sql file.
 
 
 
-![alt text](https://github.com/dineshjangid03/project_photo/blob/main/hr/home.jpg?raw=true)
 
 There are 3 option mention below according to your preference you can choose option.
 <br>
