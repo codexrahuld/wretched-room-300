@@ -25,8 +25,8 @@ public class RegisterEmployee {
 		System.out.println("Enter Email of Employee");
 		String email=sc.next();
 		
-//		System.out.println("Enter Password of Employee");
-//		String pass=sc.next();
+		System.out.println("Enter Password of Employee");
+		String pass=sc.next();
 		
 		System.out.println("Enter DOB of Employee in yyyy-mm-dd format");
 		String dob=sc.next();
@@ -46,7 +46,7 @@ public class RegisterEmployee {
 		int did=sc.nextInt();
 		EmployeeDao dao=new EmployeeDaoImpl();
 		
-		String pass='@'+fname;
+		String pass1;
 		
 		for(int i=0; i<mob.length(); i++) {
 			pass+=mob.charAt(i);

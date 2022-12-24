@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.project.model.Leave;
 
+		// Leave Use cases are here
+
 public class LeaveUseCases {
 	
 	public static void printLeaveList(List<Leave>list) {

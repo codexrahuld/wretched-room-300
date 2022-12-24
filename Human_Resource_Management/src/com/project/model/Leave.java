@@ -1,5 +1,7 @@
 package com.project.model;
 
+		// Leave model
+
 public class Leave {
 	
 	int employeeId;

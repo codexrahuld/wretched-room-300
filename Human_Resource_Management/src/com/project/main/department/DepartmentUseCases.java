@@ -1,5 +1,7 @@
 package com.project.main.department;
 
+		// Use cases or operations of Department
+
 import java.util.List;
 
 import com.project.model.Department;

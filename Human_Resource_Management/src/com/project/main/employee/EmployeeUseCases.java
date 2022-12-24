@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.project.model.Employee;
 
+		// Use cases for the employee operations
+
 public class EmployeeUseCases {
 	
 	public static final String WHITE_BOLD = "\033[1;37m";
