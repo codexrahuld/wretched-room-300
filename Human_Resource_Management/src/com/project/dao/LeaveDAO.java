@@ -3,7 +3,7 @@ package com.project.dao;
 import java.util.List;
 
 import com.project.model.Leave;
-
+		// Leave Details
 public interface LeaveDAO {
 	
 	public String requestLeave(int id, String startDate, String endDate);

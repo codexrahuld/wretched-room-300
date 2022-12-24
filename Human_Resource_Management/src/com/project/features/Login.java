@@ -1,5 +1,7 @@
 package com.project.features;
 
+		// All login credentials or functioning 
+		
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +33,8 @@ public class Login {
 		}
 		
 	}
+		
+		// login for Employee
 	
 	public static Employee employeeLoginAuth() throws EmployeeException {
 		

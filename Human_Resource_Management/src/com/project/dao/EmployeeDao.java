@@ -3,7 +3,6 @@ import java.util.List;
 
 import com.project.exceptions.EmployeeException;
 import com.project.model.Employee;
-
 public interface EmployeeDao {
 	
 	public String registerEmployee(Employee employee);

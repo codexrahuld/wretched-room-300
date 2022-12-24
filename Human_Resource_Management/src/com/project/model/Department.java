@@ -1,5 +1,8 @@
 package com.project.model;
 
+		// Department Modle
+
+
 public class Department {
 	
 	private int id;

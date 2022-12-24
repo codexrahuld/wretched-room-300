@@ -1,5 +1,7 @@
 package com.project.features;
 
+		// Login page related extra features
+
 public class extraFeature {
 	
 	public static final String GREEN_BOLD = "\033[1;32m";

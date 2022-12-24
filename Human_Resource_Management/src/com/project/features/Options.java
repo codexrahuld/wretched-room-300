@@ -12,6 +12,9 @@ import com.project.usecases.UpdateDepartment;
 import com.project.usecases.UpdateEmployee;
 import com.project.usecases.ViewAllEmployee;
 import com.project.usecases.ViewEmployeeDetail;
+import com.project.usecases.applyLeave;
+import com.project.usecases.changeEmpPass;
+import com.project.usecases.pendingLeave;
 import com.project.usecases.transferEmployee;
 
 
@@ -77,7 +80,7 @@ public class Options {
 				ViewAllEmployee.main(null);
 				break;
 			case 6:
-//				pendingLeave.main(null);
+				pendingLeave.main(null);
 				break;
 			case 7:
 				System.out.println("Enter ID of Employee");
@@ -144,15 +147,15 @@ public static void employeePanel(Employee employee) {
 			case 2:
 				UpdateEmployee.main(employee.getId());
 				break;
-//			case 3:
-//				changeEmpPass.main(employee.getId());
-//				break;
-//			case 4:
-//				applyLeave.main(employee.getId());
-//				break;
-//			case 5:
-//				CoolThings.thank();
-//				return;
+			case 3:
+				changeEmpPass.main(employee.getId());
+				break;
+			case 4:
+				applyLeave.main(employee.getId());
+				break;
+			case 5:
+				extraFeature.thank();
+				return;
 				default:
 					System.out.println("Wrong Input");
 			}

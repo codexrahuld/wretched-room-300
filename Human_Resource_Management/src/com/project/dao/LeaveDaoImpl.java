@@ -10,6 +10,8 @@ import java.util.List;
 import com.project.model.Leave;
 import com.project.utility.DButil;
 
+		// Leave datils implemetation is here
+
 public class LeaveDaoImpl implements LeaveDAO {
 
 	@Override

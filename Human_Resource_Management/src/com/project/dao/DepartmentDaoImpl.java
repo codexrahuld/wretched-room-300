@@ -14,7 +14,8 @@ import com.project.utility.DButil;
 public class DepartmentDaoImpl implements DepartmentDAO {
 	
 	
-
+// Implementation of Department starts
+	
 	@Override
 	public String registerDepartment(String name) {
 		
@@ -74,7 +75,7 @@ public class DepartmentDaoImpl implements DepartmentDAO {
 	}
 
 
-
+// Update department functionality
 
 	@Override
 	public String updateDepartment(Department department) {
