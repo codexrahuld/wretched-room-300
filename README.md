@@ -1,5 +1,5 @@
 # Human Resource Management System 
-### [ Project Code - wretched-room-300 ]
+## [ Project Code - wretched-room-300 ]
 <br>
 
 ## About
